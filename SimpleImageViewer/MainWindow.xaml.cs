@@ -31,9 +31,11 @@ namespace SimpleImageViewer
             DataContext = viewModel;
 
            string[] args = Environment.GetCommandLineArgs();
+
             slideShowTimer = new System.Windows.Threading.DispatcherTimer();
             slideShowTimer.Interval = TimeSpan.FromSeconds(5);
             slideShowTimer.Tick += new EventHandler(slideShowTimer_Tick);
+
             if (args.Length > 1)
             {
                 LoadFromStart(args);
